@@ -37,6 +37,13 @@ function shuffleNamesArray(names) {
  */
 function getNextUp() {
     console.log('get next up was clicked!')
+
+    const next= document.querySelector("#next-fellow")
+    const fellow = document.querySelector("#fellow-list")
+    console.log(next)
+    nextfellow = fellow.firstElementChild.textContent
+    console.log(nextfellow)
+    next.textContent = nextfellow
 }
 
 /**
@@ -48,4 +55,34 @@ function getNextUp() {
  */
 function shuffleClass() {
     console.log('shuffle class was clicked!')
+
+
+
+    const shuff = document.querySelectorAll("#fellow-list > li")
+    const tempFellow = shuff.length
+    let newArray = []
+    for (let i=0; i< tempFellow; i++ ){
+        
+        const developer = shuff.item(i).textContent
+        newArray.push(developer)
+    }
+
+
+    console.log(shuff)
+    console.log(tempFellow)
+    console.log(newArray)
+
+    shuffleNamesArray(newArray)
+    console.log(newArray)
+
+    
+    for (let j=0; j< newArray.length; j++){
+       
+        shuff.item(j).textContent = newArray[j]
+    }
+    
 }
+
+
+
+
